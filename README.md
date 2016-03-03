@@ -67,7 +67,7 @@ Todo & extend
 -------------
 
 #### Todo
-[ ] watch task with browser-sync
+- [ ] watch task with browser-sync
 
 #### Extend
 To use a different email API :
