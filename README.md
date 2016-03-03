@@ -1,28 +1,85 @@
-# Starter Kit : Integration Emailing
+Emailing Starter Kit
+======================
 
-### Installation
+Starter kit to create, inline, translate and send responsive emails using Zurk ink
+
+> Take a look at Zurb Ink Snippets for Sublime text 3 (see Docs & Links)
+
+Table of Contents
+-----------------
+1. [Installation](#installation)
+1. [Configuration](#configuration)
+1. [Integration](#integration)
+1. [Usage](#usage)
+1. [Todo & Extend](#todo--extend)
+1. [Docs & Links](#docs--links)
+
+Installation
+------------
+
+Just clone the repo and install the necessary node modules:
+
+```shell
+$ git clone https://github.com/quentinneyraud/mailing-starter-kit.git
+$ cd mailing-starter-kit
+$ npm install                   # Install Node modules
 ```
-  npm install
-```
 
-###### Optionnel mais très utile 
-`Zurb Ink Snippet` sur Sublime Text 3 qui fournit les snippets de grilles, colonnes, lignes 
+Configuration
+-------------
 
-### Utilisation
+All configuration files are in config folder
 
-- Lancer un BrowserSync sur **localhost:3000**
-```
-  gulp serve
-```
-- Modifier le `src/index.html` (voir doc de Zurb Ink)
-- Ajouter des class ou id aux balises
-- Ecrire le css dans `src/style.css`
-- gulp-inline-css s'occupe d'insérer le css de `style.css` dans les balises concernées et d'ajouter les attributs obligatoires aux tables
+##### email
 
+- Subjects and lists of emails indexed by languages
 
-### Docs
-- Templates dans `templates_examples`
-- [Doc de Zurb Ink](http://foundation.zurb.com/emails/docs.html)
+##### emailService
+
+- Configuration used by Email API
+- `debugEmail` to test email sending
+
+##### project
+
+- Source and dist folders
+- `translate` to translate emails
+
+##### translations
+
+- `lang` you want to translate
+- <*string to replace*> : <*translation*>
+
+Integration
+-----------
+
+Write your email like an HTML page with id, class and a separate style.css
+Use Zurb Ink to make it responsive (Docs & Links)
+
+Usage
+-----
+
+- `npm run build` : inline CSS (& translate)
+- `npm run send:dev` : send each email to `debugEmail`
+- `npm run send:prod` : send all emails
+- `npm run watch` : coming soon
+
+Todo & extend
+-------------
+
+#### Todo
+- [ ] watch task with browser-sync
+
+#### Extend
+To use a different email API :
+
+- Create `MyCustomEmailService` in EmailService folder
+- Set `emailTransporter: MyCustomEmailService` in `project` config file
+
+Docs & Links
+------------
+
+- Templates in `templates_examples`
+- [Zurb Ink doc](http://foundation.zurb.com/emails/docs.html)
 - [Building Responsive Email Templates with Ink](https://scotch.io/tutorials/building-responsive-email-templates-with-ink)
-- [Compatibilité des règles CSS dans les e-mail](https://www.campaignmonitor.com/css/)
-- [Zurb Ink Snippet pour ST3](https://packagecontrol.io/packages/Zurb%20Ink%20Snippets)
+- [CSS Support Guide for Email Clients](https://www.campaignmonitor.com/css/)
+- [Zurb Ink Snippets - ST3](https://packagecontrol.io/packages/Zurb%20Ink%20Snippets)
