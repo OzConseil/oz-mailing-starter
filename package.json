@@ -1,16 +1,62 @@
 {
   "name": "newsletter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Starter kit to build, translate, send email",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "better-npm-run build",
+    "send:debug": "better-npm-run send:debug",
+    "send:prod": "better-npm-run send:prod",
+    "watch": "better-npm-run watch"
   },
-  "author": "",
+  "betterScripts": {
+    "send:debug": {
+      "command": "gulp email",
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "*"
+      }
+    },
+    "send:prod": {
+      "command": "gulp build && gulp email",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "*"
+      }
+    },
+    "build": {
+      "command": "gulp build",
+      "env": {
+        "NODE_ENV": "production",
+        "DEBUG": "*"
+      }
+    },
+    "watch": {
+      "command": "gulp watch",
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "*"
+      }
+    }
+  },
+  "author": "Quentin Neyraud <quentin.neyraud@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "better-npm-run": "0.0.8",
     "browser-sync": "^2.10.0",
+    "debug": "^2.2.0",
+    "email-validator": "^1.0.4",
+    "fs": "0.0.2",
     "gulp": "^3.9.0",
-    "gulp-inline-css": "^3.0.0"
+    "gulp-inline-css": "^3.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "lodash": "^4.6.0",
+    "mailjet-sendemail": "^1.1.4",
+    "node-mailjet": "^1.1.0",
+    "path": "^0.12.7",
+    "require-dir": "^0.3.0",
+    "yargs": "^4.2.0"
   }
 }
