@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "better-npm-run build",
-    "send:debug": "better-npm-run send:debug",
+    "send:dev": "better-npm-run send:dev",
     "send:prod": "better-npm-run send:prod",
     "watch": "better-npm-run watch"
   },
   "betterScripts": {
-    "send:debug": {
+    "send:dev": {
       "command": "gulp email",
       "env": {
         "NODE_ENV": "development",
