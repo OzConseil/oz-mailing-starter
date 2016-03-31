@@ -3,7 +3,7 @@ Emailing Starter Kit
 
 Starter kit to create, inline, translate and send responsive emails using Zurk ink
 
-> Take a look at Zurb Ink Snippets for Sublime text 3 (see Docs & Links)
+> [Zurb Ink v2](http://foundation.zurb.com/emails.html) with gulp, sass, inky, browserSync, image compression
 
 Table of Contents
 -----------------
